@@ -3,7 +3,7 @@ CXXFLAGS := -Wall -Wextra -Werror -MD
 BUILD := ./build
 BIN := ./bin
 LIBS :=
-OBJS := bin.o
+OBJS :=
 OBJS := $(addprefix $(BUILD)/, $(OBJS))
 
 .PHONY: clean
