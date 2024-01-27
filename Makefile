@@ -9,7 +9,7 @@ OBJS := $(addprefix $(BUILD)/, $(OBJS))
 .PHONY: clean
 
 $(BIN): $(BUILD) $(OBJS)
-	$(CXX) $(OBJS) -static $(LIBS) -o $@
+	$(CXX) $(OBJS) $(LIBS) -o $@
 
 $(BUILD):
 	mkdir -p $(BUILD)
