@@ -1,10 +1,11 @@
 CXX := g++
 CXXFLAGS := -Wall -Wextra -Werror -MD
-BUILD := ./build
-BIN := ./bin
+BUILD := build
+BIN := bin
 LIBS :=
 OBJS :=
 OBJS := $(addprefix $(BUILD)/, $(OBJS))
+OBJS := $(addsuffix .o, $(OBJS))
 
 .PHONY: clean
 
