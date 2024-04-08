@@ -1,6 +1,11 @@
 # Modify 
 CXX := g++
-CXXFLAGS := -std=c++17 -Wall -Wextra -Werror -MD
+DEBUG ?= 1
+ifeq ($(DEBUG), 1)
+	CXXFLAGS := -std=c++17 -Wall -Wextra -Werror -MD
+else
+	CXXFLAGS := -std=c++17 -O3 -DNDEBUG
+endif
 BUILDDIR := build
 SRCDIR := src
 BIN := bin
