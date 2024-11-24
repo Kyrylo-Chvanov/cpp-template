@@ -2,7 +2,7 @@
 CXX := g++
 DEBUG ?= 1
 ifeq ($(DEBUG), 1)
-	CXXFLAGS := -std=c++17 -Wall -Wextra -Werror -MD
+	CXXFLAGS := -std=c++17 -Wall -Wextra -Werror -MD -g
 else
 	CXXFLAGS := -std=c++17 -O3 -DNDEBUG
 endif
@@ -19,7 +19,7 @@ OBJS := $(patsubst $(SRCDIR)/%, $(BUILDDIR)/%, $(OBJS))
 .PHONY: clean
 
 $(BIN): $(BUILDDIR) $(OBJS)
-	$(CXX) $(OBJS) $(LIBS) -o $@
+	$(CXX) $(CXXFLAGS) $(OBJS) $(LIBS) -o $@
 
 $(BUILDDIR):
 	mkdir -p $(BUILDDIR)
