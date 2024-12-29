@@ -1,5 +1,5 @@
 #!/usr/bin/env bash
 
 cmake --preset release
-cd build
+cd build_release
 make run
