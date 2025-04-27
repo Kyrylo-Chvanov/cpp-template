@@ -2,4 +2,5 @@
 
 cmake --preset debug
 cd build
-make run
+make
+./proj "$@"
